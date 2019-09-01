@@ -21,24 +21,42 @@ namespace TestSquirrel
 
         }
 
-        private async void Form1_Load(object sender, EventArgs e)
+        private  void Form1_Load(object sender, EventArgs e)
         {
             List<string> ls = new List<string>();
             ls.Add("String");
-           await CheckUpdate();
+         
             DataGridView dv = new DataGridView();
             dv.DataSource = ls;
             this.Controls.Add(dv);
-        
+           
+
         }
 
         private async Task CheckUpdate()
         {
-
-            using(var updatemanager = new UpdateManager(@"C:\Users\Munawar\source\repos\TestSquirrel\TestSquirrel\Releases"))
+            try
             {
-                await updatemanager.UpdateApp();
+
+                using (var mgr =await UpdateManager.GitHubUpdateManager(@"https://github.com/MarkBQE/TestSquirrel"))
+                {
+                   
+                        var UpdateNeeded = await mgr.UpdateApp();
+
+
+                  
+                }
             }
+            catch (Exception e)
+            {
+
+            }
+
+        }
+
+        private async  void UltraButton1_Click(object sender, EventArgs e)
+        {
+            await CheckUpdate();
         }
     }
 }

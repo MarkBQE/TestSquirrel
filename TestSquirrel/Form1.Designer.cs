@@ -42,6 +42,7 @@
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
             this.ultraGrid1 = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.ultraComboEditor1 = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
+            this.ultraButton1 = new Infragistics.Win.Misc.UltraButton();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraComboEditor1)).BeginInit();
             this.SuspendLayout();
@@ -115,14 +116,24 @@
             this.ultraComboEditor1.Size = new System.Drawing.Size(144, 34);
             this.ultraComboEditor1.TabIndex = 1;
             // 
+            // ultraButton1
+            // 
+            this.ultraButton1.Location = new System.Drawing.Point(377, 42);
+            this.ultraButton1.Name = "ultraButton1";
+            this.ultraButton1.Size = new System.Drawing.Size(182, 34);
+            this.ultraButton1.TabIndex = 2;
+            this.ultraButton1.Text = "ultraButton1";
+            this.ultraButton1.Click += new System.EventHandler(this.UltraButton1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 865);
+            this.Controls.Add(this.ultraButton1);
             this.Controls.Add(this.ultraComboEditor1);
             this.Controls.Add(this.ultraGrid1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -137,6 +148,7 @@
 
         private Infragistics.Win.UltraWinGrid.UltraGrid ultraGrid1;
         private Infragistics.Win.UltraWinEditors.UltraComboEditor ultraComboEditor1;
+        private Infragistics.Win.Misc.UltraButton ultraButton1;
     }
 }
 
